@@ -168,10 +168,7 @@ def generate_email(job_desc, resume_desc):
     linkedin = personal_info.get("linkedin", "LinkedIn URL")
     github = personal_info.get("github", "GitHub URL")
     
-    # resume_experience = resume_desc.get("experience", [])
-    # resume_projects = resume_desc.get("projects", [])
-    # resume_education = resume_desc.get("education", [])
-    # resume_skills = ', '.join(resume_desc.get("technical_skills", []))
+
     resume_experience = '\n'.join([f"- {exp['title']} at {exp['company']} ({exp['start_date']} to {exp['end_date']}): {', '.join(exp['responsibilities'])}" for exp in resume_desc.get("experience", [])])
     resume_projects = '\n'.join([f"- {proj['title']} ({', '.join(proj['technologies'])}): {proj['description']} [GitHub: {proj['github']}]" for proj in resume_desc.get("projects", [])])
     resume_education = '\n'.join([f"- {edu['degree']} from {edu['institution']} ({edu['start_date']} to {edu['end_date']}) - CGPA: {edu.get('cgpa', 'N/A')}" for edu in resume_desc.get("education", [])])
@@ -254,8 +251,7 @@ st.title('Job Application Email Generator')
 
 # URL input
 job_url = st.text_input('Enter the URL of the job opening')
-# job_url = "https://www.google.com/about/careers/applications/jobs/results/140789854144209606-chip-package-signal-and-power-integrity-engineer"
-#comment later
+
 
 
 # Resume upload
@@ -278,13 +274,6 @@ if st.button('Generate Email'):
         print(resume_text_json)  
 
         email_text = generate_email(job_desc_json, resume_text_json)
-        #  # Display the generated email
-        # st.subheader("Generated Email")
-        # st.text_area("Generated Email Text", value=email_text, height=300)
-        # st.code(email_text, language='text')  # Adds a copy option for the email text
-
-        # Email text
-        # email_text = "Your generated email content here"
         print(email_text)
 
         st.subheader("Generated Email")
@@ -295,4 +284,3 @@ if st.button('Generate Email'):
     else:
         st.error("Please provide both the job URL and your resume.")
 
-# https://www.google.com/about/careers/applications/jobs/results/140789854144209606-chip-package-signal-and-power-integrity-engineer
