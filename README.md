@@ -1,19 +1,5 @@
 # JobMailer
 
-![JobMailer Banner](https://github.com/yourusername/JobMailer/blob/main/banner.png) *(Replace with your banner image)*
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Code Flow](#code-flow)
-- [Environment Variables](#environment-variables)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Introduction
 
 **JobMailer** is an innovative web application built with Streamlit that streamlines the job application process. By simply providing a job opening URL and uploading your resume, JobMailer generates a personalized cold email tailored to the specific job and your qualifications. This automated approach saves you time and increases the effectiveness of your job applications.
